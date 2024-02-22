@@ -11,11 +11,11 @@ const fishMenu = (dailyPriceLimit) => {
     for (const fish of chefPurchases) {
         console.log(`
         <h2>${fish.species}</h2>
-        <section class="menu__item"> ${fish.species} Soup</section>
+        <section class="menu__item">${fish.species} Soup</section>
         <section class="menu__item">${fish.species} Sandwich</section>
         <section class="menu__item">Grilled ${fish.species}</section>`)  
     }
-    console.log(`</article>)`)
+    console.log(`</article>`)
 }
 
 module.exports = {fishMenu}
