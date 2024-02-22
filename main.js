@@ -1,7 +1,5 @@
 const { fishMenu } = require("./restaurant.js")
 
-
-const dailyPriceLimit = 3.99
+//input whatever price the chef wants
+const dailyPriceLimit = 8.01
 const menu = fishMenu(dailyPriceLimit)
-console.log(menu)
-
