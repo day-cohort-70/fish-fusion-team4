@@ -1,6 +1,6 @@
 
 
-const boatInventory = [
+const catchOfTheDay = [
     { id: 1, species: "Halibut", weight: 6, price: 3.55, amount: 30 },
     { id: 2, species: "Mackerel", weight: 3, price: 4.10, amount: 48 },
     { id: 3, species: "Salmon", weight: 5, price: 3.05, amount: 25 },
@@ -11,4 +11,8 @@ const boatInventory = [
     { id: 8, species: "Puffer", weight: 2, price: 9.84, amount: 52 }
 ]
 
+//This function copys the array and then exports it
+const boatInventory = () => {
+    return catchOfTheDay
+}
 module.exports = { boatInventory }
