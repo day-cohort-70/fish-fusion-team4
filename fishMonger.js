@@ -1,13 +1,10 @@
 const { boatInventory } = require("./fishingBoat.js")
-// const { dailyPriceLimit } = require("./main.js")
 
-
-const dailyPriceLimit = 3.99
 // create a function that filters boatInventory
 // boatInventory. must be >10 total fish
 // boatInventory. price must be <$7.50
 const mongerInventory = (boatInventory) => {
-    mongerSupply = []
+    const mongerSupply = []
     for (const fish of boatInventory) {
         if (fish.amount >= 10 && fish.price <= 7.50) {
             fish.amount = 10
@@ -16,21 +13,23 @@ const mongerInventory = (boatInventory) => {
     }
     return mongerSupply
 }
+//declare this variable to be able to use it in chefInventory in forof loop
+const optionsForChef = mongerInventory(boatInventory)
 
-const chefInventory = (options) => {
+
+// create a function that filters the monger supply (var = optionsForChef)
+// compare the monger supply price to the dailyPriceLimit
+//create new array of fish that fit this criteria to be returned and used to print menu 
+// called in restaurant.js module
+const chefInventory = (dailyPriceLimit) => {
     chefSelections = []
-    for (const fish of options) {
+    for (const fish of optionsForChef) {
         if (fish.price <= dailyPriceLimit) {
             fish.amount = 5
         chefSelections.push(fish)
         }
     }
     return chefSelections
-}
+} 
 
-/* const fishMenu = (dailyPriceLimit) => {
-    const finalSelection = chefInventory(optionsForChef)
-    return finalSelection
-} */
-
-module.exports = {mongerInventory, chefInventory}
+module.exports = {chefInventory}
